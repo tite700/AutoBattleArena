@@ -11,6 +11,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyCharacterBase
       objectReference: {fileID: 0}
+    - target: {fileID: 583431850341666162, guid: 8a26241a856285f4ab0cc0077bbb011c, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 583431850341666168, guid: 8a26241a856285f4ab0cc0077bbb011c, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -59,5 +63,6 @@ PrefabInstance:
       propertyPath: enemyTag
       value: Player
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1763456090428026671, guid: 8a26241a856285f4ab0cc0077bbb011c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 8a26241a856285f4ab0cc0077bbb011c, type: 3}

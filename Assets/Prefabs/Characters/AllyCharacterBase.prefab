@@ -11,6 +11,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AllyCharacterBase
       objectReference: {fileID: 0}
+    - target: {fileID: 583431850341666162, guid: 8a26241a856285f4ab0cc0077bbb011c, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 583431850341666168, guid: 8a26241a856285f4ab0cc0077bbb011c, type: 3}
       propertyPath: m_RootOrder
       value: 0

@@ -13,9 +13,5 @@ public class Range : Character
         Cooldown = 1f; //temps de l'animation
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 }

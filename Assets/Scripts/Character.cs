@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,10 +6,17 @@ using UnityEngine.AI;
 
 public class Character : MonoBehaviour
 {
-    [SerializeField] private string enemyTag;
-    
-    protected float Speed = 3f;
-    protected float Hp;
+    [SerializeField] protected string enemyTag;
+
+    private float _speed = 3f;
+    private float _hp;
+
+    public float Hp
+    {
+        get => _hp;
+        set => _hp = value;
+    }
+
     protected float Damage;
     protected float Range;
     private NavMeshAgent _navMeshAgent;
@@ -21,17 +29,17 @@ public class Character : MonoBehaviour
 
     }
 
-    void Awake()
+    protected void Awake()
     {
         _navMeshAgent = GetComponent<NavMeshAgent>();
-        _navMeshAgent.speed = Speed;
+        _navMeshAgent.speed = _speed;
     }
 
-    private Vector3 GetClosestEnemyPos()
+    protected Vector3 GetClosestEnemyPos()
     {
         Vector3 closestEnemyPos = Vector3.zero;
         float closestDistance = float.MaxValue;
-        foreach (GameObject enemy in GameObject.FindGameObjectsWithTag(enemyTag))
+        foreach (GameObject enemy in GameObject.FindGameObjectsWithTag(enemyTag)) // penser à utiliser un booléen d'actualisation
         {
             float distance = Vector3.Distance(transform.position, enemy.transform.position);
             if (distance < closestDistance)
@@ -51,10 +59,34 @@ public class Character : MonoBehaviour
         }
         
     }
+    
+    protected internal void TakeDamage(float damage)
+    {
+        _hp -= damage;
+        if (_hp <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
+    
+    protected virtual void Attack()
+    {
+        
+    }
 
     // Update is called once per frame
-    void Update()
+    protected void Update()
     {
-        MoveToPosition(GetClosestEnemyPos());
+        Vector3 closestEnemy = GetClosestEnemyPos();
+        float distance = Vector3.Distance(transform.position, closestEnemy);
+        if (distance <= Range)
+        {
+            MoveToPosition(transform.position);
+            Attack();
+        }
+        else
+        {
+            MoveToPosition(closestEnemy);
+        }
     }
 }
