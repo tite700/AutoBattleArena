@@ -8,19 +8,33 @@ public class Character : MonoBehaviour
 {
     [SerializeField] protected string enemyTag;
 
+    public string EnemyTag
+    {
+        get => enemyTag;
+        set => enemyTag = value;
+    }
+
     private float _speed = 3f;
     private float _hp;
+    protected float Damage;
 
-    public float Hp
+    public float damage
+    {
+        get => Damage;
+        set => Damage = value;
+    }
+
+
+    protected float Hp
     {
         get => _hp;
         set => _hp = value;
     }
+    
 
-    protected float Damage;
     protected float Range;
     private NavMeshAgent _navMeshAgent;
-    protected float Cooldown;
+
 
 
     // Start is called before the first frame update
@@ -29,13 +43,13 @@ public class Character : MonoBehaviour
 
     }
 
-    protected void Awake()
+    protected virtual void Awake()
     {
         _navMeshAgent = GetComponent<NavMeshAgent>();
         _navMeshAgent.speed = _speed;
     }
 
-    protected Vector3 GetClosestEnemyPos()
+    private Vector3 GetClosestEnemyPos()
     {
         Vector3 closestEnemyPos = Vector3.zero;
         float closestDistance = float.MaxValue;

@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 3752409386139343106}
   - component: {fileID: 742439487493440055}
   - component: {fileID: 1339954167752902447}
+  - component: {fileID: 6118559519675037336}
+  - component: {fileID: 1248066104699875704}
   m_Layer: 0
   m_Name: Mace_R3
   m_TagString: Untagged
@@ -83,6 +85,31 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &6118559519675037336
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2436855849661516459}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3959238, y: 1.1570133, z: 0.21133728}
+  m_Center: {x: 0.01095081, y: 0.7508902, z: 0.006645761}
+--- !u!114 &1248066104699875704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2436855849661516459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce378c0f1d8f4e54291265d949edfd41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4574517554667067928
 GameObject:
   m_ObjectHideFlags: 0
@@ -234,19 +261,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1988748806728027878, guid: e5a83881431227b4cba65082af5204a5, type: 3}
   m_PrefabInstance: {fileID: 4161115988993225005}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &530723834903061643
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2460711913682780107}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 0.85, z: 1.5}
-  m_Center: {x: 0.03, y: 0.74, z: 1.1}
 --- !u!114 &8951917438296794793
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -260,6 +274,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyTag: Enemy
+--- !u!95 &4924446666547257523
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2460711913682780107}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: fa7f36c71b9e8fa4798df3a931c2fd92, type: 3}
+  m_Controller: {fileID: 9100000, guid: 2e0b129001630ee4ca45cb95ff614940, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!4 &3363188753353255822 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1662728385187945123, guid: e5a83881431227b4cba65082af5204a5, type: 3}

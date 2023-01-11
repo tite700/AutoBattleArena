@@ -10,7 +10,6 @@ public class Range : Character
         Hp = 70f;
         Damage = 10f;
         Range = 5f;
-        Cooldown = 1f; //temps de l'animation
     }
 
     
