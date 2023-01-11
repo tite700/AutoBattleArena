@@ -7,11 +7,12 @@ public class Character : MonoBehaviour
 {
     [SerializeField] private string enemyTag;
     
-    private float _speed = 3f;
-    private float _hp;
-    private float _damage;
-    private float _range;
+    protected float Speed = 3f;
+    protected float Hp;
+    protected float Damage;
+    protected float Range;
     private NavMeshAgent _navMeshAgent;
+    protected float Cooldown;
 
 
     // Start is called before the first frame update
@@ -23,7 +24,7 @@ public class Character : MonoBehaviour
     void Awake()
     {
         _navMeshAgent = GetComponent<NavMeshAgent>();
-        _navMeshAgent.speed = _speed;
+        _navMeshAgent.speed = Speed;
     }
 
     private Vector3 GetClosestEnemyPos()
@@ -39,7 +40,6 @@ public class Character : MonoBehaviour
                 closestEnemyPos = enemy.transform.position;
             }
         }
-        Debug.Log("enemy pos : " + closestEnemyPos);
         return closestEnemyPos;
     }
 
