@@ -312,6 +312,26 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1988748806728027878, guid: e5a83881431227b4cba65082af5204a5, type: 3}
   m_PrefabInstance: {fileID: 2215982314425350864}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &8247446670631812013
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 385537894671938614}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: fa7f36c71b9e8fa4798df3a931c2fd92, type: 3}
+  m_Controller: {fileID: 9100000, guid: dfe47361aef6a4d4381e6584c380e0c5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &6274560875558794574
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -325,6 +345,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyTag: Enemy
+  arrow: {fileID: 447781642059495153, guid: 08697cd6ccb97be4b81430483ed643d7, type: 3}
 --- !u!4 &952816925277228408 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1439416702847678376, guid: e5a83881431227b4cba65082af5204a5, type: 3}

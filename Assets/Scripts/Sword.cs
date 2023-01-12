@@ -20,7 +20,6 @@ public class Sword : MonoBehaviour
         if (other.CompareTag(_tagToSearch))
         {
             other.GetComponent<Character>().TakeDamage(_damage);
-            Debug.Log("character " + other.name + " took " + _damage + " damage");
         }
     }
 

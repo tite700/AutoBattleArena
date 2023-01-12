@@ -15,8 +15,11 @@ public class Character : MonoBehaviour
     }
 
     private float _speed = 3f;
+    protected float Cooldown;
+    private float _soustract = 100000f;
     private float _hp;
     protected float Damage;
+    
 
     public float damage
     {
@@ -34,6 +37,7 @@ public class Character : MonoBehaviour
 
     protected float Range;
     private NavMeshAgent _navMeshAgent;
+    private float _lastAttackTime = 0f;
 
 
 
@@ -65,7 +69,7 @@ public class Character : MonoBehaviour
         return closestEnemyPos;
     }
 
-    private void MoveToPosition(Vector3 destination)
+    protected virtual void MoveToPosition(Vector3 destination)
     {
         if (_navMeshAgent.isOnNavMesh)
         {
@@ -93,10 +97,19 @@ public class Character : MonoBehaviour
     {
         Vector3 closestEnemy = GetClosestEnemyPos();
         float distance = Vector3.Distance(transform.position, closestEnemy);
-        if (distance <= Range)
+        if (Time.time > Cooldown)
+        {
+            _soustract = Time.time - _lastAttackTime;
+        }
+        
+        if (distance <= Range )
         {
             MoveToPosition(transform.position);
-            Attack();
+            if (_soustract >= Cooldown)
+            {
+                Attack();
+                _lastAttackTime = Time.time;
+            }
         }
         else
         {
