@@ -29,14 +29,17 @@ public class Range : Character
     
     IEnumerator TirDeFleche()
     {
+        _animator.SetTrigger(_hashAttack);
         yield return new WaitForSeconds(2.5f);
-        Instantiate(arrow, transform.position + new Vector3(0,0.925999999f,0.959999979f), Quaternion.identity);
+        var transform1 = transform;
+        var temp = Instantiate(arrow, transform1.position + new Vector3(0,0.925999999f,0.959999979f), transform1.rotation);
+        temp.tag = tag;
+        temp.GetComponent<Arrow>().enemyTag = enemyTag;
 
     }
 
     protected override void Attack()
     {
-        _animator.SetTrigger(_hashAttack); 
         if (Time.time > Cooldown)
         {
             _sub = Time.time - _latestShotTime;
@@ -56,11 +59,15 @@ public class Range : Character
     {
         base.MoveToPosition(destination);
         float dist = Vector3.Distance(destination, transform.position);
-        if (dist < Range)
+        if (dist <= Range)
         {
             _animator.SetBool(_hashWalk, false);
+            
         }
-        _animator.SetBool(_hashWalk, true);
+        else
+        {
+            _animator.SetBool(_hashWalk, true);
+        }
     }
     
 }

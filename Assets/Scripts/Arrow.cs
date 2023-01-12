@@ -6,6 +6,7 @@ using UnityEngine;
 public class Arrow : MonoBehaviour
 {
     private float _arrowSpeed = 10f;
+    public string enemyTag;
     
     void Start()
     {
