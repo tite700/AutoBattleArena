@@ -11,6 +11,7 @@ public class Melee : Character
     private int _hashWalk;
     private float _attackTime;
     
+    
 
     protected override void Awake()
     {
@@ -24,6 +25,7 @@ public class Melee : Character
         _animator = GetComponent<Animator>();
         _hashAttack = Animator.StringToHash("Attack");
         _hashWalk = Animator.StringToHash("Moving");
+
     }
 
     

@@ -32,9 +32,14 @@ public class Range : Character
         _animator.SetTrigger(_hashAttack);
         yield return new WaitForSeconds(2.5f);
         var transform1 = transform;
-        var temp = Instantiate(arrow, transform1.position + new Vector3(0,0.925999999f,0.959999979f), transform1.rotation);
-        temp.tag = tag;
-        temp.GetComponent<Arrow>().enemyTag = enemyTag;
+        for (int i = 0; i < 2; i++)
+        {
+            var temp = Instantiate(arrow, transform1.position + new Vector3(0, 0.925999999f, 0.959999979f),
+                transform1.rotation);
+            temp.tag = tag;
+            temp.GetComponent<Arrow>().enemyTag = enemyTag;
+            yield return new WaitForSeconds(0.5f);
+        }
 
     }
 

@@ -8,6 +8,7 @@ public class Sword : MonoBehaviour
 {
     private float _damage;
     private string _tagToSearch;
+    private float _lastAttackTime = 0f;
     
     void Start()
     {
@@ -17,9 +18,10 @@ public class Sword : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag(_tagToSearch))
+        if (other.CompareTag(_tagToSearch) && Time.time - _lastAttackTime > 0.7f)
         {
             other.GetComponent<Character>().TakeDamage(_damage);
+            _lastAttackTime = Time.time;
         }
     }
 

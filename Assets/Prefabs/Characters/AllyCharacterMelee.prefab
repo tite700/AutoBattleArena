@@ -248,6 +248,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6428485183816912965, guid: e5a83881431227b4cba65082af5204a5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.13
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 862647501750283451, guid: e5a83881431227b4cba65082af5204a5, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e5a83881431227b4cba65082af5204a5, type: 3}
@@ -261,19 +265,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1988748806728027878, guid: e5a83881431227b4cba65082af5204a5, type: 3}
   m_PrefabInstance: {fileID: 4161115988993225005}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &8951917438296794793
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2460711913682780107}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac58b67f156cc1049a9314ceaaf0fa2b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyTag: Enemy
 --- !u!95 &4924446666547257523
 Animator:
   serializedVersion: 4
@@ -294,6 +285,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &8951917438296794793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2460711913682780107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac58b67f156cc1049a9314ceaaf0fa2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyTag: Enemy
 --- !u!4 &3363188753353255822 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1662728385187945123, guid: e5a83881431227b4cba65082af5204a5, type: 3}
