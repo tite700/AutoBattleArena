@@ -22,14 +22,14 @@ public class Arrow : MonoBehaviour
         {
             other.gameObject.GetComponent<Character>().TakeDamage(10);
         }
-        
-        Destroy(gameObject,0.5f);
+
+        Destroy(gameObject, 0.5f);
     }
-    
+
     // Update is called once per frame
     void Update()
     {
         transform.LookAt(Target.transform.position + Vector3.up);
-        transform.Translate(new Vector3(0f,0f,1f*ArrowSpeed)*Time.deltaTime);
+        transform.Translate(new Vector3(0f, 0f, 1f * ArrowSpeed) * Time.deltaTime);
     }
 }

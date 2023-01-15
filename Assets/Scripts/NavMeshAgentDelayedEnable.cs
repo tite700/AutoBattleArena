@@ -3,9 +3,9 @@ using UnityEngine;
 using UnityEngine.AI;
 
 /// <summary>
-/// Ce script permet d'éviter des warnings dans le cas où
+/// Ce script permet d'Ã©viter des warnings dans le cas oÃ¹
 /// le NavMeshAgent est actif alors que le NavMesh n'est
-/// pas encore généré.
+/// pas encore gÃ©nÃ©rÃ©.
 /// </summary>
 [RequireComponent(typeof(NavMeshAgent))]
 public class NavMeshAgentDelayedEnable : MonoBehaviour
@@ -14,6 +14,7 @@ public class NavMeshAgentDelayedEnable : MonoBehaviour
     {
         var navMeshAgent = GetComponent<NavMeshAgent>();
         StartCoroutine(Coroutine());
+
         IEnumerator Coroutine()
         {
             navMeshAgent.enabled = false;

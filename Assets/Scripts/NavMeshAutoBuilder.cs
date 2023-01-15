@@ -15,7 +15,7 @@ public class NavMeshAutoBuilder : MonoBehaviour
             NavMesh.GetAreaFromName("Walkable"),
             markups,
             sources);
-        
+
         var settings = NavMesh.GetSettingsByIndex(0);
         var data = NavMeshBuilder.BuildNavMeshData(
             settings,

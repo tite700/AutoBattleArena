@@ -16,7 +16,7 @@ public class Billboard : MonoBehaviour
     private bool _cameraTransformIsSet;
     private Transform _cameraTransform;
     private Vector3 _initialForward;
-    
+
     protected void LateUpdate()
     {
         if (!_cameraTransformIsSet)
@@ -26,7 +26,7 @@ public class Billboard : MonoBehaviour
 
             _cameraTransform = mainCamera.transform;
             _cameraTransformIsSet = true;
-            
+
             ResetTransform(_cameraTransform);
             _transform = transform;
             _initialForward = _transform.forward;
@@ -57,7 +57,7 @@ public class Billboard : MonoBehaviour
                 break;
         }
     }
-    
+
     private void ResetTransform(Transform cameraTransform)
     {
         if (_mode == ModeType.Default)

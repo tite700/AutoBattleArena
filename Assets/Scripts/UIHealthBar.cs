@@ -9,9 +9,9 @@ public class UIHealthBar : MonoBehaviour
     private float _maxHealth;
     private float TOLERANCE = 0.01f;
     private Canvas _canvas;
-    
+
     [SerializeField] private RectTransform fill;
-    
+
     private void Awake()
     {
         _character = GetComponentInParent<Character>();
@@ -34,7 +34,7 @@ public class UIHealthBar : MonoBehaviour
         else
         {
             _canvas.gameObject.SetActive(true);
-            fill.anchorMin = new Vector2(1-(_character.Hp)/_maxHealth, 0);
+            fill.anchorMin = new Vector2(1 - (_character.Hp) / _maxHealth, 0);
         }
     }
 }

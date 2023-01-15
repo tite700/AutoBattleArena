@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class Melee : Character
 {
-
     private Animator _animator;
 
     public Animator Animator
@@ -19,28 +18,26 @@ public class Melee : Character
     private int _hashDeath;
     private float _attackTime;
     private Character _character;
-    
-    
-    
+
 
     protected override void Awake()
     {
         base.Awake();
-        
+
         Hp = 100f;
         Damage = 15f;
         Range = 1.5f;
         Cooldown = 1f;
-        
+
         _animator = GetComponent<Animator>();
         _hashAttack = Animator.StringToHash("Attack");
         _hashWalk = Animator.StringToHash("Moving");
         _hashDeath = Animator.StringToHash("Dies");
-        
+
         _character = GetComponent<Character>();
     }
 
-    
+
     protected override void Attack(GameObject closestEnemy)
     {
         if (Time.time - _attackTime > Cooldown)
@@ -48,7 +45,7 @@ public class Melee : Character
             _animator.SetTrigger(_hashAttack);
         }
     }
-    
+
     protected internal override void TakeDamage(float damage)
     {
         base.TakeDamage(damage);
@@ -57,9 +54,8 @@ public class Melee : Character
             _animator.SetTrigger(_hashDeath);
             Destroy(gameObject, 1.5f);
         }
-        
     }
-    
+
     protected override void MoveToPosition(Vector3 destination)
     {
         base.MoveToPosition(destination);
@@ -73,6 +69,7 @@ public class Melee : Character
         {
             _animator.SetBool(_hashWalk, false);
         }
+
         if (destination == Vector3.zero)
         {
             _animator.SetBool(_hashWalk, false);

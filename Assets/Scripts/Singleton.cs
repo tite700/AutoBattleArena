@@ -7,6 +7,7 @@ public abstract class Singleton<T> : MonoBehaviour
     #region Fields
 
     private static T _instance;
+
     // ReSharper disable once StaticMemberInGenericType
     private static bool _hasInstance;
 
@@ -21,9 +22,9 @@ public abstract class Singleton<T> : MonoBehaviour
 
     public static bool HasInstance => _hasInstance
 #if UNITY_EDITOR
-        || !Application.isPlaying && FindObjectOfType<T>()
+                                      || !Application.isPlaying && FindObjectOfType<T>()
 #endif
-        ;
+    ;
 
     public static T Instance
     {
@@ -32,14 +33,19 @@ public abstract class Singleton<T> : MonoBehaviour
             if (_hasInstance) return _instance;
 
             var singletonOptionsAttributes = typeof(T).GetCustomAttributes(typeof(SingletonOptionsAttribute), true);
-            var singletonOptionsAttribute = (SingletonOptionsAttribute)(singletonOptionsAttributes.Length > 0 ? singletonOptionsAttributes[0] : null);
+            var singletonOptionsAttribute =
+                (SingletonOptionsAttribute)(singletonOptionsAttributes.Length > 0
+                    ? singletonOptionsAttributes[0]
+                    : null);
 
-            var name = !string.IsNullOrEmpty(singletonOptionsAttribute?.Name) ? singletonOptionsAttribute.Name.ToUpper() : typeof(T).Name.ToUpper();
+            var name = !string.IsNullOrEmpty(singletonOptionsAttribute?.Name)
+                ? singletonOptionsAttribute.Name.ToUpper()
+                : typeof(T).Name.ToUpper();
             if (singletonOptionsAttribute != null && singletonOptionsAttribute.IsPrefab)
             {
                 name = $"Prefabs/[{name}]";
             }
-            
+
             var asset = FindObjectOfType<T>();
             if (asset != null)
             {
@@ -52,7 +58,7 @@ public abstract class Singleton<T> : MonoBehaviour
                     _instance = asset;
                     _hasInstance = true;
                 }
-                
+
                 return _instance;
             }
 
@@ -102,7 +108,9 @@ public abstract class Singleton<T> : MonoBehaviour
 
     #region Protected Methods
 
-    protected virtual void OnAwake() { }
+    protected virtual void OnAwake()
+    {
+    }
 
     #endregion
 
@@ -119,17 +127,19 @@ public abstract class Singleton<T> : MonoBehaviour
             {
                 DestroyImmediate(gameObject);
             }
-            
+
             return;
         }
 
         _instance = (T)this;
         _hasInstance = true;
-        
+
 #if UNITY_EDITOR
         if (_destroyedFrameCount == Time.frameCount)
         {
-            Debug.LogWarningFormat(this, "Singleton '{0}' destroyed and instantiated at the same frame. It might be a cleanup issue. Check the callstack.", typeof(T));
+            Debug.LogWarningFormat(this,
+                "Singleton '{0}' destroyed and instantiated at the same frame. It might be a cleanup issue. Check the callstack.",
+                typeof(T));
         }
 #endif
 

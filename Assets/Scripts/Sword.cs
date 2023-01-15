@@ -9,7 +9,7 @@ public class Sword : MonoBehaviour
     private float _damage;
     private string _tagToSearch;
     private float _lastAttackTime = 0f;
-    
+
     void Start()
     {
         _tagToSearch = GetComponentInParent<Character>().EnemyTag;
@@ -36,5 +36,4 @@ public class Sword : MonoBehaviour
             }
         }
     }
-
 }

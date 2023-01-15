@@ -6,7 +6,7 @@ using UnityEngine;
 public class Range : Character
 {
     [SerializeField] private GameObject arrow;
-    
+
     private Animator _animator;
     private int _hashAttack;
     private int _hashWalk;
@@ -14,24 +14,24 @@ public class Range : Character
     private Character _character;
     private float _latestShotTime;
     private float _sub = 10000f;
-    
+
 
     protected override void Awake()
     {
         base.Awake();
-        
+
         Hp = 70f;
         Damage = 10f;
         Range = 5f;
         Cooldown = 5f;
-        
+
         _animator = GetComponent<Animator>();
         _hashAttack = Animator.StringToHash("Attack");
         _hashWalk = Animator.StringToHash("Moving");
         _hashDeath = Animator.StringToHash("Dies");
         _character = GetComponent<Character>();
     }
-    
+
     IEnumerator TirDeFleche(GameObject closestEnemy)
     {
         _animator.SetTrigger(_hashAttack);
@@ -50,7 +50,6 @@ public class Range : Character
 
             yield return new WaitForSeconds(0.5f);
         }
-
     }
 
     protected internal override void TakeDamage(float damage)
@@ -70,17 +69,15 @@ public class Range : Character
         {
             _sub = Time.time - _latestShotTime;
         }
-        if ( _sub > Cooldown)
+
+        if (_sub > Cooldown)
         {
             _latestShotTime = Time.time;
             StartCoroutine(TirDeFleche(closestEnemy));
             _sub = 0;
-            
         }
-
-        
     }
-    
+
     protected override void MoveToPosition(Vector3 destination)
     {
         base.MoveToPosition(destination);
@@ -88,16 +85,15 @@ public class Range : Character
         if (dist <= Range)
         {
             _animator.SetBool(_hashWalk, false);
-            
         }
         else
         {
             _animator.SetBool(_hashWalk, true);
         }
+
         if (destination == Vector3.zero)
         {
             _animator.SetBool(_hashWalk, false);
         }
     }
-    
 }

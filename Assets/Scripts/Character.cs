@@ -9,7 +9,7 @@ using UnityEngine.Serialization;
 public class Character : MonoBehaviour
 {
     [SerializeField] protected string enemyTag;
-    [SerializeField] protected GameObject blueBlood; 
+    [SerializeField] protected GameObject blueBlood;
     [SerializeField] protected GameObject redBlood;
 
     public string EnemyTag
@@ -19,16 +19,17 @@ public class Character : MonoBehaviour
     }
 
     private float _speed = 3f;
-    
+
     private Material _material;
     private Color _color;
-    
-    
+
+
     protected float Cooldown;
     private float _timer;
-    
+
 
     protected float Damage;
+
     public float damage
     {
         get => Damage;
@@ -37,31 +38,32 @@ public class Character : MonoBehaviour
 
 
     private float _hp;
+
     public float Hp
     {
         get => _hp;
         set => _hp = value;
     }
-    
+
 
     protected float Range;
     private NavMeshAgent _navMeshAgent;
     private SkinnedMeshRenderer[] _tabMesh;
-    
+
 
     protected virtual void Awake()
     {
         _navMeshAgent = GetComponent<NavMeshAgent>();
         _navMeshAgent.speed = _speed;
         _tabMesh = GetComponentsInChildren<SkinnedMeshRenderer>(true);
-        
     }
 
     protected internal GameObject GetClosestEnemy()
     {
         GameObject closestEnemy = null;
         float closestDistance = float.MaxValue;
-        foreach (GameObject enemy in GameObject.FindGameObjectsWithTag(enemyTag)) // penser à utiliser un booléen d'actualisation
+        foreach (GameObject enemy in
+                 GameObject.FindGameObjectsWithTag(enemyTag)) // penser à utiliser un booléen d'actualisation
         {
             float distance = Vector3.Distance(transform.position, enemy.transform.position);
             if (distance < closestDistance)
@@ -70,6 +72,7 @@ public class Character : MonoBehaviour
                 closestEnemy = enemy;
             }
         }
+
         return closestEnemy;
     }
 
@@ -79,7 +82,6 @@ public class Character : MonoBehaviour
         {
             _navMeshAgent.SetDestination(destination);
         }
-        
     }
 
     protected internal virtual void TakeDamage(float damage)
@@ -101,8 +103,8 @@ public class Character : MonoBehaviour
             Instantiate(redBlood, transform1.position, transform1.rotation);
         }
     }
-    
-    
+
+
     private IEnumerator FlashWhite()
     {
         for (int i = 0; i < 2; i++)
@@ -119,15 +121,14 @@ public class Character : MonoBehaviour
             {
                 mesh.material.color = _color;
             }
-            yield return new WaitForSeconds(0.15f);
 
+            yield return new WaitForSeconds(0.15f);
         }
     }
 
 
     protected virtual void Attack(GameObject closestEnemy)
     {
-        
     }
 
     // Update is called once per frame
