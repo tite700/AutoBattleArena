@@ -6,40 +6,30 @@ using UnityEngine;
 
 public class Arrow : MonoBehaviour
 {
-    //private float _arrowSpeed = 10f;
+    private const float ArrowSpeed = 10f;
     public string enemyTag;
-    private Rigidbody _rb;
-    
-    void Start()
+    private GameObject _target;
+
+    public GameObject Target
     {
-        Destroy(gameObject, 5f);
+        get => _target;
+        set => _target = value;
     }
 
-    private void Awake()
+    private void OnTriggerEnter(Collider other)
     {
-        _rb = GetComponent<Rigidbody>();
-    }
-
-    public void Parabole(GameObject target)
-    {
-        
-    }
-    
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        //Instantiate(bloodSplash, this.transform.position, new Quaternion());
-        if (collision.gameObject.CompareTag(enemyTag))
+        if (other.gameObject.CompareTag(enemyTag))
         {
-            collision.gameObject.GetComponent<Character>().TakeDamage(10);
-            Debug.Log("Hit");
+            other.gameObject.GetComponent<Character>().TakeDamage(10);
         }
         
-        Destroy(gameObject,0.01f);
+        Destroy(gameObject,0.5f);
     }
+    
     // Update is called once per frame
     void Update()
     {
-        
+        transform.LookAt(Target.transform.position + Vector3.up);
+        transform.Translate(new Vector3(0f,0f,1f*ArrowSpeed)*Time.deltaTime);
     }
 }

@@ -32,24 +32,21 @@ public class Range : Character
         _character = GetComponent<Character>();
     }
     
-    IEnumerator TirDeFleche()
+    IEnumerator TirDeFleche(GameObject closestEnemy)
     {
         _animator.SetTrigger(_hashAttack);
         yield return new WaitForSeconds(2.5f);
         var transform1 = transform;
         for (int i = 0; i < 2; i++)
         {
+            if (_character.Hp <= 0) break;
             var position = transform1.position;
-            var temp = Instantiate(arrow, position + new Vector3(0, 0.925999999f, 0.959999979f),
+            var temp = Instantiate(arrow, position + new Vector3(0, 1f, 1f),
                 transform1.rotation);
+            Arrow script = temp.GetComponent<Arrow>();
             temp.tag = tag;
-            temp.GetComponent<Arrow>().enemyTag = enemyTag;
-            Rigidbody rb = temp.GetComponent<Rigidbody>();
-            Vector3 direction = _character.GetClosestEnemyPos() - position;
-            direction.y = 3f;
-            rb.AddForce(direction * 2f, ForceMode.Impulse);
-            temp.GetComponent<Arrow>().Parabole(_character.GetClosestEnemy());
-
+            script.enemyTag = enemyTag;
+            script.Target = closestEnemy;
 
             yield return new WaitForSeconds(0.5f);
         }
@@ -67,7 +64,7 @@ public class Range : Character
         }
     }
 
-    protected override void Attack()
+    protected override void Attack(GameObject closestEnemy)
     {
         if (Time.time > Cooldown)
         {
@@ -76,7 +73,7 @@ public class Range : Character
         if ( _sub > Cooldown)
         {
             _latestShotTime = Time.time;
-            StartCoroutine(TirDeFleche());
+            StartCoroutine(TirDeFleche(closestEnemy));
             _sub = 0;
             
         }
@@ -96,6 +93,10 @@ public class Range : Character
         else
         {
             _animator.SetBool(_hashWalk, true);
+        }
+        if (destination == Vector3.zero)
+        {
+            _animator.SetBool(_hashWalk, false);
         }
     }
     

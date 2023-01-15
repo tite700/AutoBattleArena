@@ -863,6 +863,10 @@ PrefabInstance:
       value: EnemyCharacterMelee
       objectReference: {fileID: 0}
     - target: {fileID: 1735188096856295925, guid: f969b71e4a4acdf4da4d615aee130159, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1735188096856295925, guid: f969b71e4a4acdf4da4d615aee130159, type: 3}
       propertyPath: m_TagString
       value: Enemy
       objectReference: {fileID: 0}
@@ -1275,6 +1279,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AllyCharacterMelee
       objectReference: {fileID: 0}
+    - target: {fileID: 2460711913682780107, guid: bda738a75a3e4be40829d5b9add19fe7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6956321743898632552, guid: bda738a75a3e4be40829d5b9add19fe7, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -1488,6 +1496,10 @@ PrefabInstance:
     - target: {fileID: 2460711913682780107, guid: bda738a75a3e4be40829d5b9add19fe7, type: 3}
       propertyPath: m_Name
       value: AllyCharacterMelee (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2460711913682780107, guid: bda738a75a3e4be40829d5b9add19fe7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6956321743898632552, guid: bda738a75a3e4be40829d5b9add19fe7, type: 3}
       propertyPath: m_RootOrder

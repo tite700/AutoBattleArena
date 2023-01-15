@@ -25,7 +25,6 @@ public class Character : MonoBehaviour
     
     
     protected float Cooldown;
-    //private float _soustract = 100000f;
     private float _timer;
     
 
@@ -47,15 +46,8 @@ public class Character : MonoBehaviour
 
     protected float Range;
     private NavMeshAgent _navMeshAgent;
-    //private float _lastAttackTime = 0f;
     private SkinnedMeshRenderer[] _tabMesh;
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
+    
 
     protected virtual void Awake()
     {
@@ -80,22 +72,6 @@ public class Character : MonoBehaviour
         }
         return closestEnemy;
     }
-    
-    protected internal Vector3 GetClosestEnemyPos()
-    {
-        Vector3 closestEnemyPos = Vector3.zero;
-        float closestDistance = float.MaxValue;
-        foreach (GameObject enemy in GameObject.FindGameObjectsWithTag(enemyTag)) // penser à utiliser un booléen d'actualisation
-        {
-            float distance = Vector3.Distance(transform.position, enemy.transform.position);
-            if (distance < closestDistance)
-            {
-                closestDistance = distance;
-                closestEnemyPos = enemy.transform.position;
-            }
-        }
-        return closestEnemyPos;
-    }
 
     protected virtual void MoveToPosition(Vector3 destination)
     {
@@ -105,24 +81,24 @@ public class Character : MonoBehaviour
         }
         
     }
-    
+
     protected internal virtual void TakeDamage(float damage)
     {
-        
         _hp -= damage;
-        StartCoroutine(FlashWhite());
-        var transform1 = transform;
-        if (_hp <= 0)
+        if (_tabMesh[0].material.color != Color.white)
         {
-            if (gameObject.CompareTag("Player"))
-            {
-            
-                Instantiate(blueBlood, transform1.position, transform1.rotation);
-            }
-            else if(gameObject.CompareTag("Enemy"))
-            {
-                Instantiate(redBlood, transform1.position, transform1.rotation);
-            }
+            StartCoroutine(FlashWhite());
+        }
+
+        var transform1 = transform;
+
+        if (gameObject.CompareTag("Player"))
+        {
+            Instantiate(blueBlood, transform1.position, transform1.rotation);
+        }
+        else if (gameObject.CompareTag("Enemy"))
+        {
+            Instantiate(redBlood, transform1.position, transform1.rotation);
         }
     }
     
@@ -149,7 +125,7 @@ public class Character : MonoBehaviour
     }
 
 
-    protected virtual void Attack()
+    protected virtual void Attack(GameObject closestEnemy)
     {
         
     }
@@ -159,20 +135,25 @@ public class Character : MonoBehaviour
     {
         if (_hp >= 0)
         {
-            Vector3 closestEnemy = GetClosestEnemyPos();
-            if (closestEnemy != Vector3.zero)
+            var closestEnemy = GetClosestEnemy();
+            var closestEnemyPos = closestEnemy.transform.position;
+            if (closestEnemyPos != Vector3.zero)
             {
-                float distance = Vector3.Distance(transform.position, closestEnemy);
+                float distance = Vector3.Distance(transform.position, closestEnemyPos);
 
                 if (distance <= Range)
                 {
                     MoveToPosition(transform.position);
-                    Attack();
+                    Attack(closestEnemy);
                 }
                 else
                 {
-                    MoveToPosition(closestEnemy);
+                    MoveToPosition(closestEnemyPos);
                 }
+            }
+            else
+            {
+                MoveToPosition(Vector3.zero);
             }
         }
     }

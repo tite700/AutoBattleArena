@@ -41,7 +41,7 @@ public class Melee : Character
     }
 
     
-    protected override void Attack()
+    protected override void Attack(GameObject closestEnemy)
     {
         if (Time.time - _attackTime > Cooldown)
         {
@@ -70,6 +70,10 @@ public class Melee : Character
             _animator.SetBool(_hashWalk, true);
         }
         else
+        {
+            _animator.SetBool(_hashWalk, false);
+        }
+        if (destination == Vector3.zero)
         {
             _animator.SetBool(_hashWalk, false);
         }
