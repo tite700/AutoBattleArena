@@ -62,7 +62,23 @@ public class Character : MonoBehaviour
         
     }
 
-    private Vector3 GetClosestEnemyPos()
+    protected internal GameObject GetClosestEnemy()
+    {
+        GameObject closestEnemy = null;
+        float closestDistance = float.MaxValue;
+        foreach (GameObject enemy in GameObject.FindGameObjectsWithTag(enemyTag)) // penser à utiliser un booléen d'actualisation
+        {
+            float distance = Vector3.Distance(transform.position, enemy.transform.position);
+            if (distance < closestDistance)
+            {
+                closestDistance = distance;
+                closestEnemy = enemy;
+            }
+        }
+        return closestEnemy;
+    }
+    
+    protected internal Vector3 GetClosestEnemyPos()
     {
         Vector3 closestEnemyPos = Vector3.zero;
         float closestDistance = float.MaxValue;
@@ -91,15 +107,7 @@ public class Character : MonoBehaviour
     {
         
         _hp -= damage;
-        Debug.Log(name +" " + _hp);
-        foreach (SkinnedMeshRenderer mesh in _tabMesh)
-        {
-            Material mat = new Material(mesh.materials[0]);
-            //Debug.Log("mat " + mat.name);
-            mat.color = Color.Lerp(Color.white, mat.color, Mathf.PingPong(Time.time, 1));
-
-        }
-        //StartCoroutine(FlashWhite(_timer));
+        StartCoroutine(FlashWhite());
 
         if (_hp <= 0)
         {
@@ -108,13 +116,19 @@ public class Character : MonoBehaviour
     }
     
     
-    private IEnumerator FlashWhite(float timer)
+    private IEnumerator FlashWhite()
     {
-        while (Time.time - timer <= 1f)
+        
+        foreach (SkinnedMeshRenderer mesh in _tabMesh)
         {
-            Debug.Log("boucle");
-            _material.color = Color.Lerp(Color.white, _color, Mathf.PingPong(Time.time, 1));
-            yield return null;
+            var material = mesh.material;   
+            _color = material.color;
+            material.color = Color.white;
+        }
+        yield return new WaitForSeconds(0.2f);
+        foreach (SkinnedMeshRenderer mesh in _tabMesh)
+        {
+            mesh.material.color = _color;
         }
     }
 

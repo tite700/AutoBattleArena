@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Range : Character
@@ -9,6 +10,7 @@ public class Range : Character
     private Animator _animator;
     private int _hashAttack;
     private int _hashWalk;
+    private Character _character;
     private float _latestShotTime;
     private float _sub = 10000f;
     
@@ -25,6 +27,7 @@ public class Range : Character
         _animator = GetComponent<Animator>();
         _hashAttack = Animator.StringToHash("Attack");
         _hashWalk = Animator.StringToHash("Moving");
+        _character = GetComponent<Character>();
     }
     
     IEnumerator TirDeFleche()
@@ -34,10 +37,17 @@ public class Range : Character
         var transform1 = transform;
         for (int i = 0; i < 2; i++)
         {
-            var temp = Instantiate(arrow, transform1.position + new Vector3(0, 0.925999999f, 0.959999979f),
+            var position = transform1.position;
+            var temp = Instantiate(arrow, position + new Vector3(0, 0.925999999f, 0.959999979f),
                 transform1.rotation);
             temp.tag = tag;
             temp.GetComponent<Arrow>().enemyTag = enemyTag;
+            Rigidbody rb = temp.GetComponent<Rigidbody>();
+            Vector3 direction = _character.GetClosestEnemyPos() - position;
+            direction.y = 3f;
+            rb.AddForce(direction * 2f, ForceMode.Impulse);
+
+
             yield return new WaitForSeconds(0.5f);
         }
 
