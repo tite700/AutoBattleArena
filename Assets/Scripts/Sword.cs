@@ -16,14 +16,34 @@ public class Sword : MonoBehaviour
         _damage = GetComponentInParent<Melee>().damage;
     }
 
-    private void OnTriggerEnter(Collider other)
+    /*private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag(_tagToSearch) && Time.time - _lastAttackTime > 0.7f)
         {
             other.GetComponent<Character>().TakeDamage(_damage);
             _lastAttackTime = Time.time;
         }
+    }*/
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (GetComponentInParent<Character>().Hp > 0)
+        {
+            if (other.CompareTag(_tagToSearch) && Time.time - _lastAttackTime > 0.7f)
+            {
+                // Deal damage only if character is not walking
+                var melee = GetComponentInParent<Melee>();
+                if (melee)
+                {
+                    var hashWalk = Animator.StringToHash("Moving");
+                    var moving = GetComponentInParent<Melee>().Animator.GetBool(hashWalk);
+                    if (moving) return;
+                }
+
+                other.GetComponent<Character>().TakeDamage(_damage);
+                _lastAttackTime = Time.time;
+            }
+        }
     }
 
-    
 }

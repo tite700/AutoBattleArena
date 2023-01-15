@@ -10,6 +10,7 @@ public class Range : Character
     private Animator _animator;
     private int _hashAttack;
     private int _hashWalk;
+    private int _hashDeath;
     private Character _character;
     private float _latestShotTime;
     private float _sub = 10000f;
@@ -27,6 +28,7 @@ public class Range : Character
         _animator = GetComponent<Animator>();
         _hashAttack = Animator.StringToHash("Attack");
         _hashWalk = Animator.StringToHash("Moving");
+        _hashDeath = Animator.StringToHash("Dies");
         _character = GetComponent<Character>();
     }
     
@@ -46,11 +48,23 @@ public class Range : Character
             Vector3 direction = _character.GetClosestEnemyPos() - position;
             direction.y = 3f;
             rb.AddForce(direction * 2f, ForceMode.Impulse);
+            temp.GetComponent<Arrow>().Parabole(_character.GetClosestEnemy());
 
 
             yield return new WaitForSeconds(0.5f);
         }
 
+    }
+
+    protected internal override void TakeDamage(float damage)
+    {
+        base.TakeDamage(damage);
+
+        if (_character.Hp <= 0)
+        {
+            _animator.SetTrigger(_hashDeath);
+            Destroy(gameObject, 1.5f);
+        }
     }
 
     protected override void Attack()

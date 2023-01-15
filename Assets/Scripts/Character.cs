@@ -4,10 +4,13 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Serialization;
 
 public class Character : MonoBehaviour
 {
     [SerializeField] protected string enemyTag;
+    [SerializeField] protected GameObject blueBlood; 
+    [SerializeField] protected GameObject redBlood;
 
     public string EnemyTag
     {
@@ -22,7 +25,7 @@ public class Character : MonoBehaviour
     
     
     protected float Cooldown;
-    private float _soustract = 100000f;
+    //private float _soustract = 100000f;
     private float _timer;
     
 
@@ -44,7 +47,7 @@ public class Character : MonoBehaviour
 
     protected float Range;
     private NavMeshAgent _navMeshAgent;
-    private float _lastAttackTime = 0f;
+    //private float _lastAttackTime = 0f;
     private SkinnedMeshRenderer[] _tabMesh;
 
 
@@ -103,32 +106,45 @@ public class Character : MonoBehaviour
         
     }
     
-    protected internal void TakeDamage(float damage)
+    protected internal virtual void TakeDamage(float damage)
     {
         
         _hp -= damage;
         StartCoroutine(FlashWhite());
-
+        var transform1 = transform;
         if (_hp <= 0)
         {
-            Destroy(gameObject);
+            if (gameObject.CompareTag("Player"))
+            {
+            
+                Instantiate(blueBlood, transform1.position, transform1.rotation);
+            }
+            else if(gameObject.CompareTag("Enemy"))
+            {
+                Instantiate(redBlood, transform1.position, transform1.rotation);
+            }
         }
     }
     
     
     private IEnumerator FlashWhite()
     {
-        
-        foreach (SkinnedMeshRenderer mesh in _tabMesh)
+        for (int i = 0; i < 2; i++)
         {
-            var material = mesh.material;   
-            _color = material.color;
-            material.color = Color.white;
-        }
-        yield return new WaitForSeconds(0.2f);
-        foreach (SkinnedMeshRenderer mesh in _tabMesh)
-        {
-            mesh.material.color = _color;
+            foreach (SkinnedMeshRenderer mesh in _tabMesh)
+            {
+                var material = mesh.material;
+                _color = material.color;
+                material.color = Color.white;
+            }
+
+            yield return new WaitForSeconds(0.15f);
+            foreach (SkinnedMeshRenderer mesh in _tabMesh)
+            {
+                mesh.material.color = _color;
+            }
+            yield return new WaitForSeconds(0.15f);
+
         }
     }
 
@@ -141,25 +157,23 @@ public class Character : MonoBehaviour
     // Update is called once per frame
     protected void Update()
     {
-        Vector3 closestEnemy = GetClosestEnemyPos();
-        float distance = Vector3.Distance(transform.position, closestEnemy);
-        if (Time.time > Cooldown)
+        if (_hp >= 0)
         {
-            _soustract = Time.time - _lastAttackTime;
-        }
-        
-        if (distance <= Range )
-        {
-            MoveToPosition(transform.position);
-            if (_soustract >= Cooldown)
+            Vector3 closestEnemy = GetClosestEnemyPos();
+            if (closestEnemy != Vector3.zero)
             {
-                Attack();
-                _lastAttackTime = Time.time;
+                float distance = Vector3.Distance(transform.position, closestEnemy);
+
+                if (distance <= Range)
+                {
+                    MoveToPosition(transform.position);
+                    Attack();
+                }
+                else
+                {
+                    MoveToPosition(closestEnemy);
+                }
             }
-        }
-        else
-        {
-            MoveToPosition(closestEnemy);
         }
     }
 }

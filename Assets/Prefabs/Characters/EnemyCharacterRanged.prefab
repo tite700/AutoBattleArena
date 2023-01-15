@@ -360,6 +360,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyTag: Player
+  blueBlood: {fileID: 8130528637229907557, guid: bb98947cba20dd844a9f4d92a0c8f06f, type: 3}
+  redBlood: {fileID: 6378813413540051058, guid: 677086009dec2d34ba55be31dcbb11ed, type: 3}
   arrow: {fileID: 447781642059495153, guid: 08697cd6ccb97be4b81430483ed643d7, type: 3}
 --- !u!4 &807606777048843998 stripped
 Transform:
