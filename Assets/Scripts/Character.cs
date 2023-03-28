@@ -107,7 +107,7 @@ public class Character : MonoBehaviour
 
     private IEnumerator FlashWhite()
     {
-        for (int i = 0; i < 2; i++)
+        for (int i = 0; i < 1; i++)
         {
             foreach (SkinnedMeshRenderer mesh in _tabMesh)
             {
