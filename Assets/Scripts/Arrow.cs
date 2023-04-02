@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Arrow : MonoBehaviour
@@ -29,7 +30,10 @@ public class Arrow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.LookAt(Target.transform.position + Vector3.up);
-        transform.Translate(new Vector3(0f, 0f, 1f * ArrowSpeed) * Time.deltaTime);
+        if (!Target.IsUnityNull())
+        {
+            transform.LookAt(Target.transform.position + Vector3.up);
+            transform.Translate(new Vector3(0f, 0f, 1f * ArrowSpeed) * Time.deltaTime);
+        }
     }
 }

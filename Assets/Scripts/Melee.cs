@@ -28,6 +28,7 @@ public class Melee : Character
         Damage = 15f;
         Range = 1.5f;
         Cooldown = 1f;
+        GoldValue = 15;
 
         _animator = GetComponent<Animator>();
         _hashAttack = Animator.StringToHash("Attack");

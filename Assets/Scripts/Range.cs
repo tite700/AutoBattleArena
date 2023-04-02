@@ -24,6 +24,7 @@ public class Range : Character
         Damage = 10f;
         Range = 5f;
         Cooldown = 5f;
+        GoldValue = 10;
 
         _animator = GetComponent<Animator>();
         _hashAttack = Animator.StringToHash("Attack");

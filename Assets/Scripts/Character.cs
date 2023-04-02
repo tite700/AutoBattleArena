@@ -11,6 +11,8 @@ public class Character : MonoBehaviour
     [SerializeField] protected string enemyTag;
     [SerializeField] protected GameObject blueBlood;
     [SerializeField] protected GameObject redBlood;
+    
+    protected int GoldValue;
 
     public string EnemyTag
     {
@@ -138,7 +140,7 @@ public class Character : MonoBehaviour
         {
             var closestEnemy = GetClosestEnemy();
             var closestEnemyPos = closestEnemy.transform.position;
-            if (closestEnemyPos != Vector3.zero)
+            if (closestEnemyPos != Vector3.zero && closestEnemy != null)
             {
                 float distance = Vector3.Distance(transform.position, closestEnemyPos);
 
