@@ -3,21 +3,49 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Experimental.AI;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
     
     [SerializeField] private GameObject melee;
+    [SerializeField] private GameObject ranged;
+    [SerializeField] private TMP_Text goldText;
+
+
+    public int Gold;
     
     //Don't destroy on load
     private void Awake()
     {
         DontDestroyOnLoad(this);
+        
     }
     
     public void SpawnMelee()
     {
-        StartCoroutine(SpawnCoroutine(melee));
+        if (Gold >= 25)
+        {
+            Gold -= 25;
+            StartCoroutine(SpawnCoroutine(melee));
+        }
+        else
+        {
+            Debug.Log("Pas assez d'or");
+        }
+    }
+
+    public void SpawnRanged()
+    {
+        if (Gold >= 20)
+        {
+            Gold -= 20;
+            StartCoroutine(SpawnCoroutine(ranged));
+        }
+        else
+        {
+            Debug.Log("Pas assez d'or");
+        }
     }
 
     IEnumerator SpawnCoroutine(GameObject prefab)
@@ -57,6 +85,6 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        goldText.text = Gold.ToString();
     }
 }
