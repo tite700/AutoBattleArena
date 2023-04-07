@@ -122,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: 78447cf1c9a2ee4488b5edd845a14165, type: 2}
 --- !u!4 &25798938 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 3d82a3611c371664c97b4fb9f1d00d98, type: 3}
@@ -1343,7 +1343,7 @@ GameObject:
   - component: {fileID: 781524811}
   - component: {fileID: 781524810}
   - component: {fileID: 781524809}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1986,7 +1986,6 @@ GameObject:
   - component: {fileID: 1677166739}
   - component: {fileID: 1677166738}
   - component: {fileID: 1677166737}
-  - component: {fileID: 1677166736}
   - component: {fileID: 1677166740}
   m_Layer: 0
   m_Name: SpawnIndicator
@@ -1995,19 +1994,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!135 &1677166736
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1677166735}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1677166737
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2066,7 +2052,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1677166735}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.1083, y: 0.08, z: 5.17}
+  m_LocalPosition: {x: 0.1083, y: 1.25, z: 5.17}
   m_LocalScale: {x: 1.2166, y: 0.01861398, z: 1.3923986}
   m_ConstrainProportionsScale: 0
   m_Children: []
