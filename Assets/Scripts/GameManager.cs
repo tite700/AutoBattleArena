@@ -111,7 +111,7 @@ public class GameManager : MonoBehaviour
         if (Physics.Raycast(ray, out RaycastHit hitInfo))
         {
             sphereIndicator.transform.position = hitInfo.point;
-            sphereIndicator.transform.position = new Vector3(sphereIndicator.transform.position.x, 0.1f, sphereIndicator.transform.position.z);
+            sphereIndicator.transform.position = new Vector3(sphereIndicator.transform.position.x, 0.00001f, sphereIndicator.transform.position.z);
         }
 
 
