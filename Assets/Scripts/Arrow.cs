@@ -27,6 +27,11 @@ public class Arrow : MonoBehaviour
         Destroy(gameObject, 0.5f);
     }
 
+    void Start()
+    {
+        Destroy(gameObject, 5f);
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -35,5 +40,6 @@ public class Arrow : MonoBehaviour
             transform.LookAt(Target.transform.position + Vector3.up);
             transform.Translate(new Vector3(0f, 0f, 1f * ArrowSpeed) * Time.deltaTime);
         }
+
     }
 }

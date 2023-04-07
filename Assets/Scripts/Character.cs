@@ -1,18 +1,15 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.Serialization;
 
 public class Character : MonoBehaviour
 {
     [SerializeField] protected string enemyTag;
     [SerializeField] protected GameObject blueBlood;
     [SerializeField] protected GameObject redBlood;
+
+    protected bool _gameFrozen;
     
-    protected int GoldValue;
 
     public string EnemyTag
     {
@@ -29,6 +26,7 @@ public class Character : MonoBehaviour
     protected float Cooldown;
     private float _timer;
 
+    protected GameManager gameManager;
 
     protected float Damage;
 
@@ -58,6 +56,8 @@ public class Character : MonoBehaviour
         _navMeshAgent = GetComponent<NavMeshAgent>();
         _navMeshAgent.speed = _speed;
         _tabMesh = GetComponentsInChildren<SkinnedMeshRenderer>(true);
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        _gameFrozen = gameManager.gameFrozen;
     }
 
     protected internal GameObject GetClosestEnemy()
@@ -80,9 +80,11 @@ public class Character : MonoBehaviour
 
     protected virtual void MoveToPosition(Vector3 destination)
     {
-        if (_navMeshAgent.isOnNavMesh)
         {
-            _navMeshAgent.SetDestination(destination);
+            if (_navMeshAgent.isOnNavMesh)
+            {
+                _navMeshAgent.SetDestination(destination);
+            }
         }
     }
 
@@ -131,33 +133,39 @@ public class Character : MonoBehaviour
 
     protected virtual void Attack(GameObject closestEnemy)
     {
+    
     }
 
     // Update is called once per frame
     protected void Update()
     {
-        if (_hp >= 0)
+        _gameFrozen = gameManager.gameFrozen;
+        if (!_gameFrozen)
         {
-            var closestEnemy = GetClosestEnemy();
-            var closestEnemyPos = closestEnemy.transform.position;
-            if (closestEnemyPos != Vector3.zero && closestEnemy != null)
+            if (_hp >= 0)
             {
-                float distance = Vector3.Distance(transform.position, closestEnemyPos);
-
-                if (distance <= Range)
+                var closestEnemy = GetClosestEnemy();
+                var closestEnemyPos = closestEnemy.transform.position;
+                if (closestEnemyPos != Vector3.zero && closestEnemy != null)
                 {
-                    MoveToPosition(transform.position);
-                    Attack(closestEnemy);
+                    float distance = Vector3.Distance(transform.position, closestEnemyPos);
+
+                    if (distance <= Range)
+                    {
+                        MoveToPosition(transform.position);
+                        Attack(closestEnemy);
+                    }
+                    else
+                    {
+                        MoveToPosition(closestEnemyPos);
+                    }
                 }
                 else
                 {
-                    MoveToPosition(closestEnemyPos);
+                    MoveToPosition(Vector3.zero);
                 }
-            }
-            else
-            {
-                MoveToPosition(Vector3.zero);
             }
         }
     }
+
 }

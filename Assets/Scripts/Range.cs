@@ -24,7 +24,6 @@ public class Range : Character
         Damage = 10f;
         Range = 5f;
         Cooldown = 5f;
-        GoldValue = 10;
 
         _animator = GetComponent<Animator>();
         _hashAttack = Animator.StringToHash("Attack");
@@ -66,6 +65,7 @@ public class Range : Character
 
     protected override void Attack(GameObject closestEnemy)
     {
+        base.Attack(closestEnemy);
         if (Time.time > Cooldown)
         {
             _sub = Time.time - _latestShotTime;

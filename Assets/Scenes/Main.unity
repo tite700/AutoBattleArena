@@ -354,7 +354,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -398,9 +398,11 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1040822889}
   - {fileID: 592187135}
   - {fileID: 2026630328}
-  - {fileID: 1238363664}
+  - {fileID: 825015804}
+  - {fileID: 1708399763}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: -0.131, z: 0}
@@ -420,7 +422,7 @@ GameObject:
   - component: {fileID: 267858978}
   - component: {fileID: 267858980}
   - component: {fileID: 267858979}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stone-brick_04 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -562,6 +564,82 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4754243197478822195, guid: 8bc925a7166c96c4cbcefe45c845cf85, type: 3}
   m_PrefabInstance: {fileID: 291965899}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &311280150
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 311280151}
+  - component: {fileID: 311280153}
+  - component: {fileID: 311280152}
+  m_Layer: 5
+  m_Name: GoldImage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &311280151
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 311280150}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 825015804}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 46.617188, y: 0.0040740967}
+  m_SizeDelta: {x: 45.4237, y: 41.544}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &311280152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 311280150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 8e1219e50e473b04fa1182920a496178, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &311280153
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 311280150}
+  m_CullTransparentMesh: 1
 --- !u!1001 &324706848
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -817,15 +895,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6378813413540051071, guid: 677086009dec2d34ba55be31dcbb11ed, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6378813413540051071, guid: 677086009dec2d34ba55be31dcbb11ed, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6378813413540051071, guid: 677086009dec2d34ba55be31dcbb11ed, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6378813413540051071, guid: 677086009dec2d34ba55be31dcbb11ed, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -914,17 +992,17 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Range 20G
+  m_text: Range 10G
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4281699839
+  m_fontColor: {r: 1, g: 0.554, b: 0.206, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -941,10 +1019,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
+  m_fontSize: 28.2
   m_fontSizeBase: 24
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -1090,13 +1168,13 @@ RectTransform:
   m_Children:
   - {fileID: 1244201586}
   m_Father: {fileID: 220234260}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 110, y: 34}
-  m_SizeDelta: {x: -536, y: -360}
-  m_Pivot: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -216, y: -174}
+  m_SizeDelta: {x: 159, y: 31}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &592187136
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1166,14 +1244,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.4784314, g: 0.5294118, b: 0.6784314, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 4701679801236757989, guid: 8aaa989a50e058c4e899161fe2901af6, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1182,7 +1260,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
+  m_PixelsPerUnitMultiplier: 5
 --- !u!222 &592187138
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1595,18 +1673,19 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 825015803}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1238363664}
-  m_RootOrder: 0
+  m_Children:
+  - {fileID: 311280151}
+  m_Father: {fileID: 220234260}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 74.21251, y: 0.33251953}
-  m_SizeDelta: {x: 39.2337, y: 32.793}
+  m_AnchoredPosition: {x: -363, y: 195}
+  m_SizeDelta: {x: 45.2878, y: 41.5443}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &825015805
 MonoBehaviour:
@@ -1630,15 +1709,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: 25
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4282241535
+  m_fontColor: {r: 1, g: 0.8196079, b: 0.2392157, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1655,7 +1734,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 29.35
+  m_fontSize: 39.05
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1691,7 +1770,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: -0.0043945312, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1799,6 +1878,82 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 32.947, y: -45, z: 0}
+--- !u!1 &1040822888
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1040822889}
+  - component: {fileID: 1040822891}
+  - component: {fileID: 1040822890}
+  m_Layer: 5
+  m_Name: Background_Button
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1040822889
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1040822888}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 220234260}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: 0, y: 50}
+  m_SizeDelta: {x: 0, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1040822890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1040822888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.745283, g: 0.745283, b: 0.745283, a: 0.41960785}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1040822891
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1040822888}
+  m_CullTransparentMesh: 1
 --- !u!1001 &1194628263
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1873,142 +2028,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6956321743898632552, guid: bda738a75a3e4be40829d5b9add19fe7, type: 3}
   m_PrefabInstance: {fileID: 1194628263}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1238363663
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1238363664}
-  - component: {fileID: 1238363666}
-  - component: {fileID: 1238363665}
-  m_Layer: 5
-  m_Name: Gold_text
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1238363664
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1238363663}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 825015804}
-  m_Father: {fileID: 220234260}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 93.9643, y: 48.2492}
-  m_Pivot: {x: 0, y: 1}
---- !u!114 &1238363665
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1238363663}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_text: 'Golds : '
-  m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_fontSharedMaterials: []
-  m_fontMaterial: {fileID: 0}
-  m_fontMaterials: []
-  m_fontColor32:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
-  m_enableVertexGradient: 0
-  m_colorMode: 3
-  m_fontColorGradient:
-    topLeft: {r: 1, g: 1, b: 1, a: 1}
-    topRight: {r: 1, g: 1, b: 1, a: 1}
-    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
-    bottomRight: {r: 1, g: 1, b: 1, a: 1}
-  m_fontColorGradientPreset: {fileID: 0}
-  m_spriteAsset: {fileID: 0}
-  m_tintAllSprites: 0
-  m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: -1183493901
-  m_overrideHtmlColors: 0
-  m_faceColor:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontSize: 29.6
-  m_fontSizeBase: 36
-  m_fontWeight: 400
-  m_enableAutoSizing: 1
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
-  m_fontStyle: 0
-  m_HorizontalAlignment: 2
-  m_VerticalAlignment: 512
-  m_textAlignment: 65535
-  m_characterSpacing: 0
-  m_wordSpacing: 0
-  m_lineSpacing: 0
-  m_lineSpacingMax: 0
-  m_paragraphSpacing: 0
-  m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
-  m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
-  m_linkedTextComponent: {fileID: 0}
-  parentLinkedComponent: {fileID: 0}
-  m_enableKerning: 1
-  m_enableExtraPadding: 0
-  checkPaddingRequired: 0
-  m_isRichText: 1
-  m_parseCtrlCharacters: 1
-  m_isOrthographic: 1
-  m_isCullingEnabled: 0
-  m_horizontalMapping: 0
-  m_verticalMapping: 0
-  m_uvLineOffset: 0
-  m_geometrySortingOrder: 0
-  m_IsTextObjectScaleStatic: 0
-  m_VertexBufferAutoSizeReduction: 0
-  m_useMaxVisibleDescender: 1
-  m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
-  m_isUsingLegacyAnimationComponent: 0
-  m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_baseMaterial: {fileID: 0}
-  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!222 &1238363666
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1238363663}
-  m_CullTransparentMesh: 1
 --- !u!1 &1244201585
 GameObject:
   m_ObjectHideFlags: 0
@@ -2067,17 +2086,17 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Melee 25G
+  m_text: Melee 15G
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4278222591
+  m_fontColor: {r: 1, g: 0.49435714, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2094,10 +2113,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
+  m_fontSize: 29.1
   m_fontSizeBase: 24
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -2183,7 +2202,7 @@ Transform:
   - {fileID: 1847915516}
   - {fileID: 1924709345987092758}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1336158308
 GameObject:
@@ -2217,7 +2236,10 @@ MonoBehaviour:
   melee: {fileID: 2460711913682780107, guid: bda738a75a3e4be40829d5b9add19fe7, type: 3}
   ranged: {fileID: 385537894671938614, guid: 94b60ec36a8d461459e673e15f2f3e14, type: 3}
   goldText: {fileID: 825015805}
-  Gold: 100
+  sphereIndicator: {fileID: 1677166735}
+  Gold: 50
+  meleePrice: 15
+  rangedPrice: 10
 --- !u!4 &1336158310
 Transform:
   m_ObjectHideFlags: 0
@@ -2231,7 +2253,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1465935232 stripped
 Transform:
@@ -2248,6 +2270,120 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: ca9686466142be04c816df18617571e1, type: 3}
   m_PrefabInstance: {fileID: 3335338396286396966}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1677166735
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1677166739}
+  - component: {fileID: 1677166738}
+  - component: {fileID: 1677166737}
+  - component: {fileID: 1677166736}
+  - component: {fileID: 1677166740}
+  m_Layer: 0
+  m_Name: SpawnIndicator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!135 &1677166736
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1677166735}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &1677166737
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1677166735}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 9580e74698539e74794a18bcea04d4d9, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1677166738
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1677166735}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1677166739
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1677166735}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.1083, y: 0.08, z: 5.17}
+  m_LocalScale: {x: 1.2166, y: 0.01861398, z: 1.3923986}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2903547747342565596}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1677166740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1677166735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c1594a90f7d2b34c8e77663017471f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ground: {fileID: 2414556940319198767}
+  redMat: {fileID: 2100000, guid: 9580e74698539e74794a18bcea04d4d9, type: 2}
+  greenMat: {fileID: 2100000, guid: 0d7fcab8f3b481145955b305130b76c5, type: 2}
+  isValid: 0
 --- !u!1001 &1684607271
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2318,6 +2454,139 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5185421199627922069, guid: 94b60ec36a8d461459e673e15f2f3e14, type: 3}
   m_PrefabInstance: {fileID: 1684607271}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1708399762
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1708399763}
+  - component: {fileID: 1708399766}
+  - component: {fileID: 1708399765}
+  - component: {fileID: 1708399764}
+  m_Layer: 5
+  m_Name: Play_button
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1708399763
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1708399762}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 220234260}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0.000012398, y: 194.99998}
+  m_SizeDelta: {x: 132.5039, y: 92.8219}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1708399764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1708399762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1708399765}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1336158309}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: StartGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1708399765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1708399762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: b1d647496e4969f44b29d2e6eec8d209, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1708399766
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1708399762}
+  m_CullTransparentMesh: 1
 --- !u!4 &1798552067 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: ccbd380800009d24a966f8add823dffb, type: 3}
@@ -2458,13 +2727,13 @@ RectTransform:
   m_Children:
   - {fileID: 419691227}
   m_Father: {fileID: 220234260}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 395, y: 35}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 209, y: -170}
   m_SizeDelta: {x: 160, y: 30}
-  m_Pivot: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2026630329
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2534,14 +2803,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.5882353, g: 0.61960787, b: 0.7058824, a: 0.6313726}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 4701679801236757989, guid: 8aaa989a50e058c4e899161fe2901af6, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2550,7 +2819,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
+  m_PixelsPerUnitMultiplier: 5
 --- !u!222 &2026630331
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2669,7 +2938,7 @@ GameObject:
   - component: {fileID: 4265766795579285821}
   - component: {fileID: 3723911824604361752}
   - component: {fileID: 7931488600455977164}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stone-brick_30
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2717,7 +2986,7 @@ GameObject:
   - component: {fileID: 4408681226892746614}
   - component: {fileID: 6245096441639994053}
   - component: {fileID: 4516298352710045057}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stone-brick_09
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3096,7 +3365,7 @@ GameObject:
   - component: {fileID: 3270889629216568019}
   - component: {fileID: 4106874144279341543}
   - component: {fileID: 2855634423116377420}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stone-brick_23
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3156,7 +3425,7 @@ GameObject:
   - component: {fileID: 1807002416301525792}
   - component: {fileID: 5154218561730582056}
   - component: {fileID: 11866716265657784}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stone-brick_74
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3368,7 +3637,7 @@ GameObject:
   - component: {fileID: 4555622543154283954}
   - component: {fileID: 5024516064276459558}
   - component: {fileID: 8624324447387286871}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stone-brick_58
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3401,7 +3670,7 @@ GameObject:
   - component: {fileID: 3374699394225428430}
   - component: {fileID: 6595122787223108280}
   - component: {fileID: 5145247303790230989}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stone-brick_44
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3419,7 +3688,7 @@ GameObject:
   - component: {fileID: 75333005384218161}
   - component: {fileID: 3806761255680842473}
   - component: {fileID: 8960173348322968586}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stone-brick_32
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3537,7 +3806,7 @@ GameObject:
   - component: {fileID: 6241888407388005663}
   - component: {fileID: 7480955621073657321}
   - component: {fileID: 617828114328919508}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stone-brick_68
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3716,7 +3985,7 @@ GameObject:
   - component: {fileID: 3603645490664502244}
   - component: {fileID: 8633842951227629587}
   - component: {fileID: 7494929501256292989}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stone-brick_14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3734,7 +4003,7 @@ GameObject:
   - component: {fileID: 3107810459886156251}
   - component: {fileID: 2409927442765843436}
   - component: {fileID: 5748687926515283413}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stone-brick_55
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3802,7 +4071,7 @@ GameObject:
   - component: {fileID: 5472214759380638802}
   - component: {fileID: 2426525894736256398}
   - component: {fileID: 7890398785584728876}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stone-brick_53
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4187,7 +4456,7 @@ GameObject:
   - component: {fileID: 9112201779390248036}
   - component: {fileID: 1256246700491620715}
   - component: {fileID: 5656120884740010596}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stone-brick_29
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4458,7 +4727,7 @@ GameObject:
   - component: {fileID: 166305835699807183}
   - component: {fileID: 255535028295936020}
   - component: {fileID: 3223653731549147679}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stone-brick_71
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4706,7 +4975,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7814992721737942531}
   - component: {fileID: 2673697745055365800}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4732,7 +5001,7 @@ GameObject:
   - component: {fileID: 4288645206166721010}
   - component: {fileID: 1356666099556084875}
   - component: {fileID: 8281036992932457290}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stone-brick_18
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4850,7 +5119,7 @@ GameObject:
   - component: {fileID: 5083002652936129045}
   - component: {fileID: 3967453832336579646}
   - component: {fileID: 2568365590780501895}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stone-brick_33
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4910,7 +5179,7 @@ GameObject:
   - component: {fileID: 3286738675116634798}
   - component: {fileID: 997331908251038266}
   - component: {fileID: 3211216532205249715}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stone-brick_72
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5257,8 +5526,9 @@ Transform:
   - {fileID: 324814917}
   - {fileID: 456526924}
   - {fileID: 364293918}
+  - {fileID: 1677166739}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2942471233623070166
 GameObject:
@@ -5271,7 +5541,7 @@ GameObject:
   - component: {fileID: 150565347228470433}
   - component: {fileID: 8565493722264220129}
   - component: {fileID: 6998060263529602460}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stone-brick_34
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5289,7 +5559,7 @@ GameObject:
   - component: {fileID: 5540801580157474884}
   - component: {fileID: 6486687331679475077}
   - component: {fileID: 3693366129690301080}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stone-brick_16
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5307,7 +5577,7 @@ GameObject:
   - component: {fileID: 241468464441736618}
   - component: {fileID: 7786189438006297702}
   - component: {fileID: 9092399996083887996}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stone-brick_69
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5325,7 +5595,7 @@ GameObject:
   - component: {fileID: 6208571930015390732}
   - component: {fileID: 9158011113694157372}
   - component: {fileID: 7626211523132857106}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stone-brick_52
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5447,7 +5717,7 @@ GameObject:
   - component: {fileID: 7876242201139148166}
   - component: {fileID: 6847294464572572017}
   - component: {fileID: 2397219407877270227}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stone-brick_70
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5576,7 +5846,7 @@ GameObject:
   - component: {fileID: 8793200966876858129}
   - component: {fileID: 1199702243496498634}
   - component: {fileID: 675524372813018498}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stone-brick_36
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5636,7 +5906,7 @@ GameObject:
   - component: {fileID: 4943188877699088464}
   - component: {fileID: 3840863049657212155}
   - component: {fileID: 5027950428040088911}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stone-brick_26
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5774,7 +6044,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5382593827947736435}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Stones
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6104,7 +6374,7 @@ GameObject:
   - component: {fileID: 4305318535873145983}
   - component: {fileID: 2175191712007294589}
   - component: {fileID: 7088947686452217818}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stone-brick_43
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6145,7 +6415,7 @@ GameObject:
   - component: {fileID: 4084043387391900442}
   - component: {fileID: 5988016378805227727}
   - component: {fileID: 4135201596938812941}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stone-brick_98
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6320,7 +6590,7 @@ GameObject:
   - component: {fileID: 7518902867205334131}
   - component: {fileID: 8928018885990751034}
   - component: {fileID: 3357536304757883911}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stone-brick_41
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6338,7 +6608,7 @@ GameObject:
   - component: {fileID: 1201400241504274127}
   - component: {fileID: 8446483178310156675}
   - component: {fileID: 3526936185247347400}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stone-brick_25
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6370,7 +6640,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5463051290068561946}
   - component: {fileID: 9088264544183065400}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground_05
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6388,7 +6658,7 @@ GameObject:
   - component: {fileID: 8296069950815326744}
   - component: {fileID: 6046345804124692184}
   - component: {fileID: 7975331523103153917}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stone-brick_40
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6427,7 +6697,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5269663443420169939}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Board
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6756,7 +7026,7 @@ GameObject:
   - component: {fileID: 1305182269423540330}
   - component: {fileID: 2295467890959552815}
   - component: {fileID: 4113247213565001645}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stone-brick_50
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6915,7 +7185,7 @@ GameObject:
   - component: {fileID: 3469382291528284436}
   - component: {fileID: 3444286793453645749}
   - component: {fileID: 6100815332360521985}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stone-brick_35
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7057,7 +7327,7 @@ Transform:
   m_GameObject: {fileID: 7657606322377233910}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: -0.1, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 0.15}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4666123765508009539}
@@ -7131,7 +7401,7 @@ GameObject:
   - component: {fileID: 6001346480620670646}
   - component: {fileID: 1629626476194913260}
   - component: {fileID: 32670460105021179}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stone-brick_47
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7257,7 +7527,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: ccbd380800009d24a966f8add823dffb, type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: ccbd380800009d24a966f8add823dffb, type: 3}
       propertyPath: m_IsActive
@@ -7430,7 +7700,7 @@ GameObject:
   - component: {fileID: 3191610462166570076}
   - component: {fileID: 5136581289722161203}
   - component: {fileID: 7165905658907155421}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stone-brick_51
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7477,7 +7747,7 @@ GameObject:
   m_Component:
   - component: {fileID: 544237857738193019}
   - component: {fileID: 2644746542534280845}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground_08
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7511,7 +7781,7 @@ GameObject:
   - component: {fileID: 1037832910220810450}
   - component: {fileID: 3615138785333233852}
   - component: {fileID: 4188492468944540298}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stone-brick_21
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7529,7 +7799,7 @@ GameObject:
   - component: {fileID: 6282006204902899406}
   - component: {fileID: 3660485930901496011}
   - component: {fileID: 246384769800587240}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stone-brick_04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7562,7 +7832,7 @@ GameObject:
   - component: {fileID: 1357805398085937847}
   - component: {fileID: 6478300789089390368}
   - component: {fileID: 7609337637476987060}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stone-brick_12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7894,7 +8164,7 @@ GameObject:
   - component: {fileID: 4859470095828722402}
   - component: {fileID: 6437298610947179784}
   - component: {fileID: 9103851571766802494}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stone-brick_28
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7935,7 +8205,7 @@ GameObject:
   - component: {fileID: 6879196004156326821}
   - component: {fileID: 8069866629391724864}
   - component: {fileID: 2392407639286521115}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stone-brick_61
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7953,7 +8223,7 @@ GameObject:
   - component: {fileID: 4237924506754925373}
   - component: {fileID: 8800142736010469316}
   - component: {fileID: 489969788209980867}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stone-brick_13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7971,7 +8241,7 @@ GameObject:
   - component: {fileID: 6963300061611748581}
   - component: {fileID: 5751875167671172045}
   - component: {fileID: 3519544458049874899}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stone-brick_83
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8129,7 +8399,7 @@ GameObject:
   - component: {fileID: 5701281410131246280}
   - component: {fileID: 8178889028697853157}
   - component: {fileID: 2191780009734784982}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stone-brick_66
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8260,7 +8530,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4666123765508009539}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: WaterBottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8320,7 +8590,7 @@ GameObject:
   - component: {fileID: 3631167808436649233}
   - component: {fileID: 6847441719781713196}
   - component: {fileID: 3154358912303566986}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stone-brick_62
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8546,7 +8816,7 @@ GameObject:
   - component: {fileID: 2537175154661667162}
   - component: {fileID: 6105661811288691349}
   - component: {fileID: 4354433886280851291}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stone-brick_24
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8571,7 +8841,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5878537063527338618}
   - component: {fileID: 2005813010722915188}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8639,7 +8909,7 @@ GameObject:
   - component: {fileID: 7835675311241597429}
   - component: {fileID: 6259500723301625500}
   - component: {fileID: 2147599865630802471}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stone-brick_38
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8657,7 +8927,7 @@ GameObject:
   - component: {fileID: 3619990560070774738}
   - component: {fileID: 3228125515771855116}
   - component: {fileID: 3478631357576341838}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stone-brick_22
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8827,7 +9097,7 @@ GameObject:
   - component: {fileID: 627716193001454395}
   - component: {fileID: 9149009253131349893}
   - component: {fileID: 5649464339481076119}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stone-brick_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8868,7 +9138,7 @@ GameObject:
   - component: {fileID: 465582628615080927}
   - component: {fileID: 2526333264620853913}
   - component: {fileID: 7392134643716657300}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stone-brick_57
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8917,7 +9187,7 @@ GameObject:
   - component: {fileID: 8965612706229380770}
   - component: {fileID: 8151240792424574314}
   - component: {fileID: 2076384179116959815}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stone-brick_15
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8935,7 +9205,7 @@ GameObject:
   - component: {fileID: 3400015438639109116}
   - component: {fileID: 4454455228277171078}
   - component: {fileID: 9036094102248278647}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stone-brick_08
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9011,7 +9281,7 @@ GameObject:
   - component: {fileID: 6333001171495480383}
   - component: {fileID: 5730323460685296894}
   - component: {fileID: 4226329301954588549}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stone-brick_67
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9029,7 +9299,7 @@ GameObject:
   - component: {fileID: 853952798408371623}
   - component: {fileID: 822566317817707979}
   - component: {fileID: 4170940289658187959}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stone-brick_07
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9047,7 +9317,7 @@ GameObject:
   - component: {fileID: 3213900738918870939}
   - component: {fileID: 8829377179076869232}
   - component: {fileID: 1419093395283580119}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stone-brick_45
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9157,7 +9427,7 @@ GameObject:
   - component: {fileID: 3104258782587289851}
   - component: {fileID: 6435117929065682102}
   - component: {fileID: 2590280474754723426}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stone-brick_11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9206,7 +9476,7 @@ GameObject:
   - component: {fileID: 1072871354062327464}
   - component: {fileID: 7635512835336967981}
   - component: {fileID: 4872547801373001692}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stone-brick_60
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9538,7 +9808,7 @@ GameObject:
   - component: {fileID: 4935904584269975812}
   - component: {fileID: 3395178364665975536}
   - component: {fileID: 619032453747115834}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stone-brick_46
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9602,7 +9872,7 @@ GameObject:
   - component: {fileID: 6577655444684482893}
   - component: {fileID: 7536908205641106864}
   - component: {fileID: 8583261176366431646}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stone-brick_49
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9661,7 +9931,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4580453989876760924}
   - component: {fileID: 8325194265695028908}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9679,7 +9949,7 @@ GameObject:
   - component: {fileID: 8131560121767763396}
   - component: {fileID: 7413520212934706637}
   - component: {fileID: 1628617844019696263}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stone-brick_37
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9738,7 +10008,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1825677256051282722}
   - component: {fileID: 2708945458845775397}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground_09
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9756,7 +10026,7 @@ GameObject:
   - component: {fileID: 7729519269302839791}
   - component: {fileID: 316203880636933733}
   - component: {fileID: 419634880524250966}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stone-brick_31
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9773,7 +10043,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6428836441203732172}
   - component: {fileID: 5347891000976258457}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9833,7 +10103,7 @@ GameObject:
   - component: {fileID: 7418958862932079141}
   - component: {fileID: 2217056728021464935}
   - component: {fileID: 636745921745766798}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stone-brick_39
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9883,7 +10153,7 @@ GameObject:
   - component: {fileID: 4760466861137929915}
   - component: {fileID: 575040639310104024}
   - component: {fileID: 3366447804836126210}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stone-brick_42
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9901,7 +10171,7 @@ GameObject:
   - component: {fileID: 3133338946645301012}
   - component: {fileID: 5473320455109928465}
   - component: {fileID: 5505877873080634254}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stone-brick_19
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10091,7 +10361,7 @@ GameObject:
   - component: {fileID: 2402843836762418994}
   - component: {fileID: 426563151969889286}
   - component: {fileID: 1960311916550422151}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stone-brick
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10208,13 +10478,27 @@ GameObject:
   m_Component:
   - component: {fileID: 4299525425031279923}
   - component: {fileID: 5655364074124010974}
-  m_Layer: 0
+  - component: {fileID: 7657606322377233911}
+  m_Layer: 4
   m_Name: WaterBottom
   m_TagString: FX/BackgroundGradient
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
+--- !u!65 &7657606322377233911
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7657606322377233910}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 300, y: 300.00006, z: 0.20000005}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &7688338357541680502
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10318,7 +10602,7 @@ GameObject:
   - component: {fileID: 9153935655496048245}
   - component: {fileID: 7833790016716914611}
   - component: {fileID: 2855645917844416451}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stone-brick_73
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10344,7 +10628,7 @@ GameObject:
   - component: {fileID: 1894685538886838042}
   - component: {fileID: 2316687234470767161}
   - component: {fileID: 8609866561404464550}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stone-brick_54
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10361,7 +10645,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6406485314543861551}
   - component: {fileID: 1036516713736801405}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground_07
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10379,7 +10663,7 @@ GameObject:
   - component: {fileID: 1812189278011880601}
   - component: {fileID: 2576663178531206143}
   - component: {fileID: 4300811234779220665}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stone-brick_64
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10615,7 +10899,7 @@ GameObject:
   - component: {fileID: 3834492184424906287}
   - component: {fileID: 6608480514975097651}
   - component: {fileID: 2793040777150916569}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stone-brick_65
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10675,7 +10959,7 @@ GameObject:
   - component: {fileID: 4895327061370866912}
   - component: {fileID: 2264751032349001640}
   - component: {fileID: 7500303971936839094}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stone-brick_27
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10693,7 +10977,7 @@ GameObject:
   - component: {fileID: 913810817138742694}
   - component: {fileID: 6044068083559294928}
   - component: {fileID: 1377565742428346239}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stone-brick_63
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10750,7 +11034,7 @@ GameObject:
   - component: {fileID: 4150479504117839236}
   - component: {fileID: 6096535257123416204}
   - component: {fileID: 5630862740118372320}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stone-brick_56
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10825,7 +11109,7 @@ GameObject:
   - component: {fileID: 2383233340822815061}
   - component: {fileID: 4433187164894493723}
   - component: {fileID: 8747340216120252453}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stone-brick_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10919,7 +11203,7 @@ GameObject:
   - component: {fileID: 6056817853759698105}
   - component: {fileID: 8131886637654238835}
   - component: {fileID: 1665687673639803226}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stone-brick_82
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11292,7 +11576,7 @@ GameObject:
   - component: {fileID: 9027200824909393774}
   - component: {fileID: 3052168124373769566}
   - component: {fileID: 8098078507821758691}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stone-brick_48
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11492,7 +11776,7 @@ GameObject:
   - component: {fileID: 1415264653520631219}
   - component: {fileID: 4945374119797442786}
   - component: {fileID: 2111903874183564916}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stone-brick_59
   m_TagString: Untagged
   m_Icon: {fileID: 0}

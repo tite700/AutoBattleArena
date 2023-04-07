@@ -1,8 +1,6 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.Experimental.AI;
 using TMPro;
 
 public class GameManager : MonoBehaviour
@@ -11,68 +9,91 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject melee;
     [SerializeField] private GameObject ranged;
     [SerializeField] private TMP_Text goldText;
+    [SerializeField] private GameObject sphereIndicator;
 
 
     public int Gold;
+    private Ray ray;
+    public int meleePrice;
+    public int rangedPrice;
+    private SphereIndicator IndicatorScript;
+    private Melee MeleeScript;
+    private Range RangedScript;
+    private bool isGameFrozen = true;
+
+    public bool gameFrozen
+    {
+        get => isGameFrozen;
+        set => isGameFrozen = value;
+    }
+
+
+    //list of gameObjects from the UI that will disappear when the game starts
+    [SerializeField] private GameObject[] UIObjects;
     
     //Don't destroy on load
     private void Awake()
     {
         DontDestroyOnLoad(this);
-        
+        IndicatorScript = sphereIndicator.GetComponent<SphereIndicator>();
+        MeleeScript = melee.GetComponent<Melee>();
+        RangedScript = ranged.GetComponent<Range>();
     }
     
     public void SpawnMelee()
     {
-        if (Gold >= 25)
+        if (Gold >= meleePrice)
         {
-            Gold -= 25;
-            StartCoroutine(SpawnCoroutine(melee));
-        }
-        else
-        {
-            Debug.Log("Pas assez d'or");
+            StartCoroutine(SpawnCoroutine(melee,meleePrice));
         }
     }
 
     public void SpawnRanged()
     {
-        if (Gold >= 20)
+        if (Gold >= rangedPrice)
         {
-            Gold -= 20;
-            StartCoroutine(SpawnCoroutine(ranged));
-        }
-        else
-        {
-            Debug.Log("Pas assez d'or");
+            StartCoroutine(SpawnCoroutine(ranged,rangedPrice));
         }
     }
 
-    IEnumerator SpawnCoroutine(GameObject prefab)
+    public void StartGame()
+    {
+        isGameFrozen = false;
+        foreach (var obj in UIObjects)
+        {
+            obj.SetActive(false);
+        }
+    }
+
+    IEnumerator SpawnCoroutine(GameObject prefab,int price)
     {
         //Wait for the user to click on the position where he wants to spawn the unit and get the position
         while (!Input.GetMouseButtonDown(0))
         {
+            sphereIndicator.SetActive(true);
             yield return null;
         }
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+       
+
         if (Physics.Raycast(ray, out RaycastHit hitInfo))
         {
-            // Affiche un rayon partant de la souris jusqu'au point d'impact
-            Debug.DrawRay(ray.origin, hitInfo.point - ray.origin, Color.red, 10.0f);
-            Debug.Log(hitInfo.point);
 
-            // Dessine un petit point sur le sol à l'emplacement où l'objet sera placé
+
             Vector3 pointOnNavMesh = default;
             if (NavMesh.SamplePosition(hitInfo.point, out NavMeshHit navMeshHit, 50.0f, NavMesh.AllAreas))
             {
                 pointOnNavMesh = navMeshHit.position;
-                Debug.DrawRay(pointOnNavMesh, Vector3.up, Color.green, 10.0f);
             }
 
             // Instancie l'objet à l'emplacement du point sur le NavMesh
-            Instantiate(prefab, pointOnNavMesh, Quaternion.identity);
+            if (IndicatorScript.isValid)
+            {
+                Instantiate(prefab, pointOnNavMesh, Quaternion.identity);
+                Gold -= price;
+            }
+            
         }
+        sphereIndicator.SetActive(false);
         
     }
 
@@ -85,6 +106,15 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Make the sphere indicator follow the mouse
+        ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        if (Physics.Raycast(ray, out RaycastHit hitInfo))
+        {
+            sphereIndicator.transform.position = hitInfo.point;
+            sphereIndicator.transform.position = new Vector3(sphereIndicator.transform.position.x, 0.1f, sphereIndicator.transform.position.z);
+        }
+
+
         goldText.text = Gold.ToString();
     }
 }

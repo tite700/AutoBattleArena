@@ -28,7 +28,6 @@ public class Melee : Character
         Damage = 15f;
         Range = 1.5f;
         Cooldown = 1f;
-        GoldValue = 15;
 
         _animator = GetComponent<Animator>();
         _hashAttack = Animator.StringToHash("Attack");
@@ -41,6 +40,7 @@ public class Melee : Character
 
     protected override void Attack(GameObject closestEnemy)
     {
+        base.Attack(closestEnemy);
         if (Time.time - _attackTime > Cooldown)
         {
             _animator.SetTrigger(_hashAttack);
