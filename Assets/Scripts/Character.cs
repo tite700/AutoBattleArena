@@ -1,12 +1,18 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class Character : MonoBehaviour
 {
+
+    [SerializeField] protected GameObject goldCoin;
     [SerializeField] protected string enemyTag;
     [SerializeField] protected GameObject blueBlood;
     [SerializeField] protected GameObject redBlood;
+    [SerializeField] protected int goldGiven;
+    [SerializeField] protected bool isDead;
+
 
     protected bool _gameFrozen;
     
@@ -145,24 +151,27 @@ public class Character : MonoBehaviour
             if (_hp >= 0)
             {
                 var closestEnemy = GetClosestEnemy();
-                var closestEnemyPos = closestEnemy.transform.position;
-                if (closestEnemyPos != Vector3.zero && closestEnemy != null)
+                if (!closestEnemy.IsUnityNull())
                 {
-                    float distance = Vector3.Distance(transform.position, closestEnemyPos);
-
-                    if (distance <= Range)
+                    var closestEnemyPos = closestEnemy.transform.position;
+                    if (closestEnemyPos != Vector3.zero && closestEnemy != null)
                     {
-                        MoveToPosition(transform.position);
-                        Attack(closestEnemy);
+                        float distance = Vector3.Distance(transform.position, closestEnemyPos);
+
+                        if (distance <= Range)
+                        {
+                            MoveToPosition(transform.position);
+                            Attack(closestEnemy);
+                        }
+                        else
+                        {
+                            MoveToPosition(closestEnemyPos);
+                        }
                     }
                     else
                     {
-                        MoveToPosition(closestEnemyPos);
+                        MoveToPosition(Vector3.zero);
                     }
-                }
-                else
-                {
-                    MoveToPosition(Vector3.zero);
                 }
             }
         }

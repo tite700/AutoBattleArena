@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class UIHealthBar : MonoBehaviour
 {
@@ -11,11 +12,14 @@ public class UIHealthBar : MonoBehaviour
     private Canvas _canvas;
 
     [SerializeField] private RectTransform fill;
+    [SerializeField] private TMP_Text goldValueText;
+    [SerializeField] private int goldValue;
 
     private void Awake()
     {
         _character = GetComponentInParent<Character>();
         _canvas = GetComponentInChildren<Canvas>();
+        goldValueText.text = goldValue.ToString();
     }
 
     // Start is called before the first frame update

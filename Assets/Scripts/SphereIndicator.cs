@@ -25,8 +25,6 @@ public class SphereIndicator : MonoBehaviour
         Debug.DrawRay(transform.position, Vector3.down, Color.red);
         if (Physics.Raycast(transform.position,Vector3.down, out hit))
         {
-            Debug.Log("layer collided : " + hit.collider.gameObject.name);
-            Debug.Log("layer : " + hit.collider.gameObject.layer);
 
             // Check if the ray hit the ground layer
             if (hit.collider.gameObject.layer == ground.layer)

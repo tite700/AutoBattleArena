@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Melee : Character
 {
+
     private Animator _animator;
 
     public Animator Animator
@@ -50,8 +51,15 @@ public class Melee : Character
     protected internal override void TakeDamage(float damage)
     {
         base.TakeDamage(damage);
-        if (_character.Hp <= 0)
+        if (_character.Hp <= 0 && isDead == false)
         {
+            if (tag == "Enemy") 
+            {
+                gameManager.Gold += goldGiven;
+                goldCoin.SetActive(true);
+                Destroy(goldCoin, 0.5f);
+                isDead = true;
+            }
             _animator.SetTrigger(_hashDeath);
             Destroy(gameObject, 1.5f);
         }

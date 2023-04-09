@@ -256,6 +256,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2349548992362691147, guid: 8e4067e3e58f2914ab42bfdbb5fe62c4, type: 3}
+      propertyPath: goldValue
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 3609636200718410608, guid: 8e4067e3e58f2914ab42bfdbb5fe62c4, type: 3}
       propertyPath: m_Name
       value: EnemyCharacterRanged
@@ -329,7 +333,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
 --- !u!95 &1388947775396449031
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -346,7 +350,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!114 &992246019470803326
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -359,13 +363,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c13dcd8d3701c77468936c5f57440862, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  goldCoin: {fileID: 2180453048541901721}
   enemyTag: Player
   blueBlood: {fileID: 8130528637229907557, guid: bb98947cba20dd844a9f4d92a0c8f06f, type: 3}
   redBlood: {fileID: 6378813413540051058, guid: 677086009dec2d34ba55be31dcbb11ed, type: 3}
+  goldGiven: 5
   arrow: {fileID: 447781642059495153, guid: 08697cd6ccb97be4b81430483ed643d7, type: 3}
 --- !u!4 &807606777048843998 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4213295169304812094, guid: 8e4067e3e58f2914ab42bfdbb5fe62c4, type: 3}
+  m_PrefabInstance: {fileID: 3552658097744485600}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2180453048541901721 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3390952998199390073, guid: 8e4067e3e58f2914ab42bfdbb5fe62c4, type: 3}
   m_PrefabInstance: {fileID: 3552658097744485600}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &3036654022908934215 stripped
