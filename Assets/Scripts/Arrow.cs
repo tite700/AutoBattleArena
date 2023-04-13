@@ -10,7 +10,6 @@ public class Arrow : MonoBehaviour
     private const float ArrowSpeed = 10f;
     public string enemyTag;
     private GameObject _target;
-
     public GameObject Target
     {
         get => _target;

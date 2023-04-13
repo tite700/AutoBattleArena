@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     private Ray ray;
     public int meleePrice;
     public int rangedPrice;
+    public bool gameOver;
     private SphereIndicator IndicatorScript;
     private Melee MeleeScript;
     private Range RangedScript;

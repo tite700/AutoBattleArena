@@ -148,6 +148,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 72c953891cdde9d4cb8c8a3eb58e797c, type: 3}
   m_PrefabInstance: {fileID: 5426006105976584718}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &161214881
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 161214882}
+  m_Layer: 0
+  m_Name: SceneLoader
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &161214882
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 161214881}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 379.5, y: 232.4253, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &194720980 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 25bcfb65cd6d6416cb28b5e898e81584, type: 3}
@@ -974,7 +1005,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &539327082
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1353,7 +1384,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &655849031
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1507,7 +1538,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &701715019
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2237,7 +2268,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1113944399
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2440,6 +2471,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1255707045}
+  - component: {fileID: 1255707046}
   m_Layer: 5
   m_Name: '[Tutorial_UI]'
   m_TagString: Untagged
@@ -2472,6 +2504,31 @@ RectTransform:
   m_AnchoredPosition: {x: -0.000015259, y: 0.00070953}
   m_SizeDelta: {x: 800, y: 449.86}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1255707046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1255707044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb9c5d4bc3d465c4fa05ece044efe3f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UIObjects:
+  - {fileID: 655849030}
+  - {fileID: 701715018}
+  - {fileID: 539327081}
+  - {fileID: 1113944398}
+  tutorialText:
+  - Welcome to the tutorial ! Press enter or space to continue :)
+  - This is your amount of gold.
+  - You can buy a melee unit for 15 gold by clicking here
+  - You can buy a range unit for 10 gold by clicking here
+  - You can start the battle by clicking here
+  backgroundText: {fileID: 768836017}
+  tutorialTextWindow: {fileID: 640569649}
 --- !u!1 &1302929650
 GameObject:
   m_ObjectHideFlags: 0
@@ -2544,6 +2601,7 @@ MonoBehaviour:
   Gold: 15
   meleePrice: 15
   rangedPrice: 10
+  gameOver: 0
   UIObjects:
   - {fileID: 1708399762}
 --- !u!4 &1336158310

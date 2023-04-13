@@ -173,6 +173,10 @@ public class Character : MonoBehaviour
                         MoveToPosition(Vector3.zero);
                     }
                 }
+                if (closestEnemy.IsUnityNull())
+                {
+                    gameManager.gameOver = true;
+                }
             }
         }
     }
